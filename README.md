@@ -10,3 +10,4 @@ update 0.1 (14/04/2025)
 
 update 0.2 (04/27/2025)
 -penambahan CRUD di bagian sistem produknya
+- laporan progress (event driven programing)
