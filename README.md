@@ -6,8 +6,8 @@ projek ini masih dalam tahap pengembangan. aplikasi dekstop yang berisi sistem c
 jika memungkinkan waktu saya ingin menambahkan sistem dengan adanya fitur AInya 
 
 update 0.1 (14/04/2025)
--penambahan preview tampilan aplikasinya dengan figma
+- penambahan preview tampilan aplikasinya dengan figma
 
 update 0.2 (04/27/2025)
--penambahan CRUD di bagian sistem produknya
+- penambahan CRUD di bagian sistem produknya
 - laporan progress (event driven programing)
