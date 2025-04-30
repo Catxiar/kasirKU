@@ -40,7 +40,11 @@ namespace kasirKU
             textBox5 = new TextBox();
             label5 = new Label();
             textBox6 = new TextBox();
+            this.pictureBox1 = new PictureBox();
+            this.pictureBox2 = new PictureBox();
             ((ISupportInitialize)dataGridView1).BeginInit();
+            ((ISupportInitialize)this.pictureBox1).BeginInit();
+            ((ISupportInitialize)this.pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -204,6 +208,24 @@ namespace kasirKU
             textBox6.Size = new Size(37, 23);
             textBox6.TabIndex = 16;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = Color.FromArgb(255, 128, 128);
+            this.pictureBox1.Location = new Point(-2, 163);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new Size(801, 216);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = Color.FromArgb(255, 192, 192);
+            this.pictureBox2.Location = new Point(-2, -3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new Size(801, 216);
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
+            // 
             // stok
             // 
             ClientSize = new Size(800, 381);
@@ -224,8 +246,12 @@ namespace kasirKU
             Controls.Add(button2);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
+            Controls.Add(this.pictureBox2);
+            Controls.Add(this.pictureBox1);
             Name = "stok";
             ((ISupportInitialize)dataGridView1).EndInit();
+            ((ISupportInitialize)this.pictureBox1).EndInit();
+            ((ISupportInitialize)this.pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
 

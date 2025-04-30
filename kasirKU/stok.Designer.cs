@@ -36,5 +36,7 @@
         private TextBox textBox5;
         private Label label5;
         private TextBox textBox6;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }
