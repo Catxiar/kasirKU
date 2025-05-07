@@ -221,12 +221,13 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.BackColor = Color.FromArgb(255, 192, 255);
-            pictureBox3.Location = new Point(-1, 170);
+            pictureBox3.BackColor = Color.FromArgb(255, 128, 128);
+            pictureBox3.Location = new Point(-1, 154);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(803, 223);
+            pictureBox3.Size = new Size(803, 239);
             pictureBox3.TabIndex = 17;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // MenuUtama
             // 

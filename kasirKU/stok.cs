@@ -14,10 +14,13 @@ namespace kasirKU
     public partial class stok : Form
     {
         private koneksi db;
+        private CRUDS crud;
         public stok()
         {
             InitializeComponent();
             db = new koneksi();
+            crud = new CRUDS();
+
             LoadData();
         }
 
@@ -266,51 +269,27 @@ namespace kasirKU
 
         private void button2_Click(object sender, EventArgs e)
         {
-            try
+            bool success = crud.tambahProduk(textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
+            if (success)
             {
-                db.OpenConnection();
-                string query = "INSERT INTO produk (kode_produk, nama_produk, harga_beli, harga_jual, stok) VALUES (@kode, @nama, @beli, @jual, @stok)";
-                MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
-                cmd.Parameters.AddWithValue("@kode", textBox2.Text);
-                cmd.Parameters.AddWithValue("@nama", textBox3.Text);
-                cmd.Parameters.AddWithValue("@beli", textBox4.Text);
-                cmd.Parameters.AddWithValue("@jual", textBox5.Text);
-                cmd.Parameters.AddWithValue("@stok", textBox6.Text);
-
-                cmd.ExecuteNonQuery();
                 MessageBox.Show("Data berhasil ditambahkan!");
                 LoadData();
-                db.CloseConnection();
+                ClearFields();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Produk dengan kode atau nama tersebut sudah ada!");
             }
         }
+
+
+
         private void LoadData()
         {
-            try
-            {
-                db.OpenConnection();
-                string query = "SELECT * FROM produk";
-                MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-
-                dataGridView1.DataSource = null;
-                dataGridView1.Rows.Clear();
-
-                dataGridView1.DataSource = dt;
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // <<< tambahkan ini
-
-                db.CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            dataGridView1.DataSource = crud.lihatProduk();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
 
         private void ClearFields()
         {
@@ -321,11 +300,15 @@ namespace kasirKU
             textBox6.Text = "";
         }
 
+        string oldKode = ""; // Tambahkan di class-level (di luar method) agar bisa diakses di seluruh form
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Supaya tidak error kalau klik header
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                oldKode = row.Cells["kode_produk"].Value.ToString();
+
                 textBox2.Text = row.Cells["kode_produk"].Value.ToString();
                 textBox3.Text = row.Cells["nama_produk"].Value.ToString();
                 textBox4.Text = row.Cells["harga_beli"].Value.ToString();
@@ -334,96 +317,53 @@ namespace kasirKU
             }
         }
 
+
         private void button4_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                try
+                bool success = crud.hapusProduk(textBox2.Text);
+                if (success)
                 {
-                    db.OpenConnection();
-                    string query = "DELETE FROM produk WHERE kode_produk = @kode";
-                    MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
-                    cmd.Parameters.AddWithValue("@kode", textBox2.Text);
-
-                    int result = cmd.ExecuteNonQuery();
-                    if (result > 0)
-                    {
-                        MessageBox.Show("Data berhasil dihapus!");
-                        LoadData();
-                        ClearFields();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Data tidak ditemukan!");
-                    }
-
-                    db.CloseConnection();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-        }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                db.OpenConnection();
-                string keyword = textBox1.Text;
-                string query = "SELECT * FROM produk WHERE kode_produk LIKE CONCAT('%', @keyword, '%') OR nama_produk LIKE CONCAT('%', @keyword, '%')";
-                MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
-                cmd.Parameters.AddWithValue("@keyword", keyword);
-
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dataGridView1.DataSource = dt;
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Tambahkan ini biar full lebar
-
-                db.CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
-
-
-
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                db.OpenConnection();
-                string query = "UPDATE produk SET nama_produk = @nama, harga_beli = @beli, harga_jual = @jual, stok = @stok WHERE kode_produk = @kode";
-                MySqlCommand cmd = new MySqlCommand(query, db.GetConnection());
-                cmd.Parameters.AddWithValue("@kode", textBox2.Text);
-                cmd.Parameters.AddWithValue("@nama", textBox3.Text);
-                cmd.Parameters.AddWithValue("@beli", textBox4.Text);
-                cmd.Parameters.AddWithValue("@jual", textBox5.Text);
-                cmd.Parameters.AddWithValue("@stok", textBox6.Text);
-
-                int result = cmd.ExecuteNonQuery();
-                if (result > 0)
-                {
-                    MessageBox.Show("Data berhasil diupdate!");
+                    MessageBox.Show("Data berhasil dihapus.");
                     LoadData();
                     ClearFields();
                 }
                 else
                 {
-                    MessageBox.Show("Data tidak ditemukan!");
+                    MessageBox.Show("Data gagal dihapus.");
                 }
-
-                db.CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = crud.cariProduk(textBox1.Text);
+        }
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            bool success = crud.UpdateProduk(
+                oldKode,
+                textBox2.Text, textBox3.Text,
+                textBox4.Text, textBox5.Text,
+                textBox6.Text
+            );
+
+            if (success)
+            {
+                MessageBox.Show("Data berhasil diperbarui.");
+                LoadData();
+                ClearFields();
+            }
+            else
+            {
+                MessageBox.Show("Data gagal diperbarui.");
+            }
+        }
+
+
     }
 
 
