@@ -15,3 +15,6 @@ update 0.2 (27/04/2025)
 update 0.21 (07/05/2025)
 - perbaikan pada CRUDS di halaman stok
 - perubahan struktur CRUDS
+
+update 0.22 (25/05/2025)
+- perubahan struktur dengan MVC
