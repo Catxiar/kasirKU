@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Data;
+using kasirKU.Model;
 using MySql.Data.MySqlClient;
 
-namespace kasirKU
+namespace kasirKU.Controller
 {
     public class CRUDS
     {

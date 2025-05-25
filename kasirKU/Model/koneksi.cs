@@ -1,6 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 
-namespace kasirKU
+namespace kasirKU.Model
 {
     public class koneksi
     {
