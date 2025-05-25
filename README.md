@@ -8,6 +8,10 @@ jika memungkinkan waktu saya ingin menambahkan sistem dengan adanya fitur AInya
 update 0.1 (14/04/2025)
 - penambahan preview tampilan aplikasinya dengan figma
 
-update 0.2 (04/27/2025)
-- penambahan CRUD di bagian sistem produknya
+update 0.2 (27/04/2025)
+- penambahan CRUDS di bagian sistem produknya
 - laporan progress (event driven programing)
+
+update 0.21 (07/05/2025)
+- perbaikan pada CRUDS di halaman stok
+- perubahan struktur CRUDS
