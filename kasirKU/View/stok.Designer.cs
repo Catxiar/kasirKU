@@ -38,5 +38,23 @@
         private TextBox textBox6;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private DataGridView tampildata;
+        private Button buttontambah;
+        private Button buttonedit;
+        private Button buttonhapus;
+        private Button cari;
+        private TextBox isicari;
+        private Label labelkodeproduk;
+        private Label labelnamaproduk;
+        private Label labelhargabeliproduk;
+        private Label labelhargajualproduk;
+        private Label labelstok;
+        private Button buttonkembali;
+        private Button buttoncari;
+        private TextBox isikodeproduk;
+        private TextBox isisnamaproduk;
+        private TextBox isihargabeli;
+        private TextBox isihargajual;
+        private TextBox isistok;
     }
 }

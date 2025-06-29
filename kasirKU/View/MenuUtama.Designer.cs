@@ -28,116 +28,113 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            label1 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            textBox3 = new TextBox();
+            tampildata = new DataGridView();
+            labeltotal = new Label();
+            isitotal = new TextBox();
+            buttontambah = new Button();
+            buttonedit = new Button();
+            buttonhapus = new Button();
+            isikodeproduk = new TextBox();
+            labeljumlah = new Label();
+            isijumlah = new TextBox();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
+            buttonstock = new Button();
+            buttonsimpan = new Button();
+            buttonkeluar = new Button();
             pictureBox3 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tampildata).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // tampildata
             // 
-            dataGridView1.BackgroundColor = SystemColors.ControlLight;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(776, 150);
-            dataGridView1.TabIndex = 0;
+            tampildata.BackgroundColor = SystemColors.ControlLight;
+            tampildata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tampildata.Location = new Point(12, 12);
+            tampildata.Name = "tampildata";
+            tampildata.Size = new Size(776, 150);
+            tampildata.TabIndex = 0;
             // 
-            // label1
+            // labeltotal
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(224, 224, 224);
-            label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(589, 167);
-            label1.Name = "label1";
-            label1.Size = new Size(93, 39);
-            label1.TabIndex = 1;
-            label1.Text = "TOTAL";
+            labeltotal.AutoSize = true;
+            labeltotal.BackColor = Color.FromArgb(224, 224, 224);
+            labeltotal.BorderStyle = BorderStyle.FixedSingle;
+            labeltotal.Font = new Font("Segoe UI", 20F);
+            labeltotal.Location = new Point(589, 167);
+            labeltotal.Name = "labeltotal";
+            labeltotal.Size = new Size(93, 39);
+            labeltotal.TabIndex = 1;
+            labeltotal.Text = "TOTAL";
             // 
-            // textBox1
+            // isitotal
             // 
-            textBox1.Font = new Font("Segoe UI", 20F);
-            textBox1.Location = new Point(688, 165);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 43);
-            textBox1.TabIndex = 2;
+            isitotal.Font = new Font("Segoe UI", 20F);
+            isitotal.Location = new Point(688, 165);
+            isitotal.Name = "isitotal";
+            isitotal.Size = new Size(100, 43);
+            isitotal.TabIndex = 2;
             // 
-            // button1
+            // buttontambah
             // 
-            button1.Font = new Font("Segoe UI", 10F);
-            button1.Location = new Point(12, 168);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 27);
-            button1.TabIndex = 3;
-            button1.Text = "Tambah";
-            button1.UseVisualStyleBackColor = true;
+            buttontambah.Font = new Font("Segoe UI", 10F);
+            buttontambah.Location = new Point(12, 168);
+            buttontambah.Name = "buttontambah";
+            buttontambah.Size = new Size(75, 27);
+            buttontambah.TabIndex = 3;
+            buttontambah.Text = "Tambah";
+            buttontambah.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonedit
             // 
-            button2.Font = new Font("Segoe UI", 10F);
-            button2.Location = new Point(12, 201);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 27);
-            button2.TabIndex = 4;
-            button2.Text = "Edit";
-            button2.UseVisualStyleBackColor = true;
+            buttonedit.Font = new Font("Segoe UI", 10F);
+            buttonedit.Location = new Point(12, 201);
+            buttonedit.Name = "buttonedit";
+            buttonedit.Size = new Size(75, 27);
+            buttonedit.TabIndex = 4;
+            buttonedit.Text = "Edit";
+            buttonedit.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonhapus
             // 
-            button3.Font = new Font("Segoe UI", 10F);
-            button3.Location = new Point(12, 234);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 27);
-            button3.TabIndex = 5;
-            button3.Text = "Hapus";
-            button3.UseVisualStyleBackColor = true;
+            buttonhapus.Font = new Font("Segoe UI", 10F);
+            buttonhapus.Location = new Point(12, 234);
+            buttonhapus.Name = "buttonhapus";
+            buttonhapus.Size = new Size(75, 27);
+            buttonhapus.TabIndex = 5;
+            buttonhapus.Text = "Hapus";
+            buttonhapus.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // isikodeproduk
             // 
-            textBox2.Font = new Font("Segoe UI", 10F);
-            textBox2.Location = new Point(107, 170);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 25);
-            textBox2.TabIndex = 6;
+            isikodeproduk.Font = new Font("Segoe UI", 10F);
+            isikodeproduk.Location = new Point(107, 170);
+            isikodeproduk.Name = "isikodeproduk";
+            isikodeproduk.Size = new Size(150, 25);
+            isikodeproduk.TabIndex = 6;
             // 
-            // label2
+            // labeljumlah
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(224, 224, 224);
-            label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.Font = new Font("Segoe UI", 9F);
-            label2.Location = new Point(181, 203);
-            label2.Name = "label2";
-            label2.Size = new Size(39, 17);
-            label2.TabIndex = 7;
-            label2.Text = "JMLH";
+            labeljumlah.AutoSize = true;
+            labeljumlah.BackColor = Color.FromArgb(224, 224, 224);
+            labeljumlah.BorderStyle = BorderStyle.FixedSingle;
+            labeljumlah.Font = new Font("Segoe UI", 9F);
+            labeljumlah.Location = new Point(181, 203);
+            labeljumlah.Name = "labeljumlah";
+            labeljumlah.Size = new Size(39, 17);
+            labeljumlah.TabIndex = 7;
+            labeljumlah.Text = "JMLH";
             // 
-            // textBox3
+            // isijumlah
             // 
-            textBox3.Font = new Font("Segoe UI", 10F);
-            textBox3.Location = new Point(226, 199);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(31, 25);
-            textBox3.TabIndex = 8;
+            isijumlah.Font = new Font("Segoe UI", 10F);
+            isijumlah.Location = new Point(226, 199);
+            isijumlah.Name = "isijumlah";
+            isijumlah.Size = new Size(31, 25);
+            isijumlah.TabIndex = 8;
             // 
             // pictureBox1
             // 
@@ -157,67 +154,37 @@
             pictureBox2.TabIndex = 10;
             pictureBox2.TabStop = false;
             // 
-            // button4
+            // buttonstock
             // 
-            button4.Font = new Font("Segoe UI", 10F);
-            button4.Location = new Point(287, 170);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 27);
-            button4.TabIndex = 11;
-            button4.Text = "Analisis";
-            button4.UseVisualStyleBackColor = true;
+            buttonstock.Font = new Font("Segoe UI", 10F);
+            buttonstock.Location = new Point(486, 169);
+            buttonstock.Name = "buttonstock";
+            buttonstock.Size = new Size(75, 27);
+            buttonstock.TabIndex = 13;
+            buttonstock.Text = "Stock";
+            buttonstock.UseVisualStyleBackColor = true;
+            buttonstock.Click += stock_click;
             // 
-            // button5
+            // buttonsimpan
             // 
-            button5.Font = new Font("Segoe UI", 10F);
-            button5.Location = new Point(12, 267);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 27);
-            button5.TabIndex = 12;
-            button5.Text = "Scan";
-            button5.UseVisualStyleBackColor = true;
+            buttonsimpan.Font = new Font("Segoe UI", 10F);
+            buttonsimpan.Location = new Point(284, 170);
+            buttonsimpan.Name = "buttonsimpan";
+            buttonsimpan.Size = new Size(75, 27);
+            buttonsimpan.TabIndex = 14;
+            buttonsimpan.Text = "Simpan";
+            buttonsimpan.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // buttonkeluar
             // 
-            button6.Font = new Font("Segoe UI", 10F);
-            button6.Location = new Point(486, 169);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 27);
-            button6.TabIndex = 13;
-            button6.Text = "Stock";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += stock_click;
-            // 
-            // button7
-            // 
-            button7.Font = new Font("Segoe UI", 10F);
-            button7.Location = new Point(287, 214);
-            button7.Name = "button7";
-            button7.Size = new Size(75, 27);
-            button7.TabIndex = 14;
-            button7.Text = "Simpan";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            button8.Font = new Font("Segoe UI", 10F);
-            button8.Location = new Point(387, 170);
-            button8.Name = "button8";
-            button8.Size = new Size(75, 27);
-            button8.TabIndex = 15;
-            button8.Text = "File";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            button9.Font = new Font("Segoe UI", 10F);
-            button9.Location = new Point(718, 348);
-            button9.Name = "button9";
-            button9.Size = new Size(75, 27);
-            button9.TabIndex = 16;
-            button9.Text = "Keluar";
-            button9.UseVisualStyleBackColor = true;
-            button9.Click += button9_Click;
+            buttonkeluar.Font = new Font("Segoe UI", 10F);
+            buttonkeluar.Location = new Point(718, 348);
+            buttonkeluar.Name = "buttonkeluar";
+            buttonkeluar.Size = new Size(75, 27);
+            buttonkeluar.TabIndex = 16;
+            buttonkeluar.Text = "Keluar";
+            buttonkeluar.UseVisualStyleBackColor = true;
+            buttonkeluar.Click += button9_Click;
             // 
             // pictureBox3
             // 
@@ -234,27 +201,24 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 381);
-            Controls.Add(button9);
-            Controls.Add(button8);
-            Controls.Add(button7);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(textBox3);
-            Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(buttonkeluar);
+            Controls.Add(buttonsimpan);
+            Controls.Add(buttonstock);
+            Controls.Add(isijumlah);
+            Controls.Add(labeljumlah);
+            Controls.Add(isikodeproduk);
+            Controls.Add(buttonhapus);
+            Controls.Add(buttonedit);
+            Controls.Add(buttontambah);
+            Controls.Add(isitotal);
+            Controls.Add(labeltotal);
+            Controls.Add(tampildata);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Name = "MenuUtama";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tampildata).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -282,5 +246,17 @@
         private Button button8;
         private Button button9;
         private PictureBox pictureBox3;
+        private Label labeltotal;
+        private TextBox isitotal;
+        private Button buttontambah;
+        private Button buttonedit;
+        private Button buttonhapus;
+        private TextBox isikodeproduk;
+        private Label labeljumlah;
+        private TextBox isijumlah;
+        private Button buttonstock;
+        private Button buttonsimpan;
+        private Button buttonkeluar;
+        private DataGridView tampildata;
     }
 }

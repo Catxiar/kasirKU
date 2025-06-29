@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using kasirKU.Controller;
 using kasirKU.Model;
 using MySql.Data.MySqlClient;
+using System.Globalization;
 
 namespace kasirKU
 {
@@ -28,235 +29,235 @@ namespace kasirKU
 
         private void InitializeComponent()
         {
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            textBox1 = new TextBox();
-            label1 = new Label();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            textBox3 = new TextBox();
-            label3 = new Label();
-            label4 = new Label();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            label5 = new Label();
-            textBox6 = new TextBox();
-            this.pictureBox1 = new PictureBox();
-            this.pictureBox2 = new PictureBox();
-            ((ISupportInitialize)dataGridView1).BeginInit();
-            ((ISupportInitialize)this.pictureBox1).BeginInit();
-            ((ISupportInitialize)this.pictureBox2).BeginInit();
+            this.buttonkembali = new Button();
+            tampildata = new DataGridView();
+            buttontambah = new Button();
+            buttonedit = new Button();
+            buttonhapus = new Button();
+            this.buttoncari = new Button();
+            isicari = new TextBox();
+            labelkodeproduk = new Label();
+            this.isikodeproduk = new TextBox();
+            labelnamaproduk = new Label();
+            this.isisnamaproduk = new TextBox();
+            labelhargabeliproduk = new Label();
+            labelhargajualproduk = new Label();
+            this.isihargabeli = new TextBox();
+            this.isihargajual = new TextBox();
+            labelstok = new Label();
+            this.isistok = new TextBox();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            ((ISupportInitialize)tampildata).BeginInit();
+            ((ISupportInitialize)pictureBox1).BeginInit();
+            ((ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // buttonkembali
             // 
-            button1.Location = new Point(3, 355);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "Kembali";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.buttonkembali.Location = new Point(3, 355);
+            this.buttonkembali.Name = "buttonkembali";
+            this.buttonkembali.Size = new Size(75, 23);
+            this.buttonkembali.TabIndex = 0;
+            this.buttonkembali.Text = "Kembali";
+            this.buttonkembali.UseVisualStyleBackColor = true;
+            this.buttonkembali.Click += this.button1_Click;
             // 
-            // dataGridView1
+            // tampildata
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(776, 150);
-            dataGridView1.TabIndex = 1;
-            dataGridView1.CellClick += dataGridView1_CellClick;
+            tampildata.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tampildata.Location = new Point(12, 12);
+            tampildata.Name = "tampildata";
+            tampildata.Size = new Size(776, 150);
+            tampildata.TabIndex = 1;
+            tampildata.CellClick += dataGridView1_CellClick;
             // 
-            // button2
+            // buttontambah
             // 
-            button2.Location = new Point(12, 168);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 2;
-            button2.Text = "Tambah";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            buttontambah.Location = new Point(12, 168);
+            buttontambah.Name = "buttontambah";
+            buttontambah.Size = new Size(75, 23);
+            buttontambah.TabIndex = 2;
+            buttontambah.Text = "Tambah";
+            buttontambah.UseVisualStyleBackColor = true;
+            buttontambah.Click += button2_Click;
             // 
-            // button3
+            // buttonedit
             // 
-            button3.Location = new Point(93, 168);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 3;
-            button3.Text = "Edit";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            buttonedit.Location = new Point(93, 168);
+            buttonedit.Name = "buttonedit";
+            buttonedit.Size = new Size(75, 23);
+            buttonedit.TabIndex = 3;
+            buttonedit.Text = "Edit";
+            buttonedit.UseVisualStyleBackColor = true;
+            buttonedit.Click += button3_Click;
             // 
-            // button4
+            // buttonhapus
             // 
-            button4.Location = new Point(174, 168);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 4;
-            button4.Text = "Hapus";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            buttonhapus.Location = new Point(174, 168);
+            buttonhapus.Name = "buttonhapus";
+            buttonhapus.Size = new Size(75, 23);
+            buttonhapus.TabIndex = 4;
+            buttonhapus.Text = "Hapus";
+            buttonhapus.UseVisualStyleBackColor = true;
+            buttonhapus.Click += button4_Click;
             // 
-            // button5
+            // buttoncari
             // 
-            button5.Location = new Point(516, 168);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 5;
-            button5.Text = "Pencarian";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            this.buttoncari.Location = new Point(516, 168);
+            this.buttoncari.Name = "buttoncari";
+            this.buttoncari.Size = new Size(75, 23);
+            this.buttoncari.TabIndex = 5;
+            this.buttoncari.Text = "Pencarian";
+            this.buttoncari.UseVisualStyleBackColor = true;
+            this.buttoncari.Click += this.button5_Click;
             // 
-            // textBox1
+            // isicari
             // 
-            textBox1.Location = new Point(597, 169);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(191, 23);
-            textBox1.TabIndex = 6;
+            isicari.Location = new Point(597, 169);
+            isicari.Name = "isicari";
+            isicari.Size = new Size(191, 23);
+            isicari.TabIndex = 6;
             // 
-            // label1
+            // labelkodeproduk
             // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.ActiveBorder;
-            label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Font = new Font("Segoe UI", 10F);
-            label1.Location = new Point(6, 216);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 21);
-            label1.TabIndex = 7;
-            label1.Text = "Kode Produk";
+            labelkodeproduk.AutoSize = true;
+            labelkodeproduk.BackColor = SystemColors.ActiveBorder;
+            labelkodeproduk.BorderStyle = BorderStyle.FixedSingle;
+            labelkodeproduk.Font = new Font("Segoe UI", 10F);
+            labelkodeproduk.Location = new Point(6, 216);
+            labelkodeproduk.Name = "labelkodeproduk";
+            labelkodeproduk.Size = new Size(90, 21);
+            labelkodeproduk.TabIndex = 7;
+            labelkodeproduk.Text = "Kode Produk";
             // 
-            // textBox2
+            // isikodeproduk
             // 
-            textBox2.Location = new Point(100, 215);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(191, 23);
-            textBox2.TabIndex = 8;
+            this.isikodeproduk.Location = new Point(100, 215);
+            this.isikodeproduk.Name = "isikodeproduk";
+            this.isikodeproduk.Size = new Size(191, 23);
+            this.isikodeproduk.TabIndex = 8;
             // 
-            // label2
+            // labelnamaproduk
             // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.ActiveBorder;
-            label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.Font = new Font("Segoe UI", 10F);
-            label2.Location = new Point(2, 252);
-            label2.Name = "label2";
-            label2.Size = new Size(95, 21);
-            label2.TabIndex = 9;
-            label2.Text = "Nama Produk";
+            labelnamaproduk.AutoSize = true;
+            labelnamaproduk.BackColor = SystemColors.ActiveBorder;
+            labelnamaproduk.BorderStyle = BorderStyle.FixedSingle;
+            labelnamaproduk.Font = new Font("Segoe UI", 10F);
+            labelnamaproduk.Location = new Point(2, 252);
+            labelnamaproduk.Name = "labelnamaproduk";
+            labelnamaproduk.Size = new Size(95, 21);
+            labelnamaproduk.TabIndex = 9;
+            labelnamaproduk.Text = "Nama Produk";
             // 
-            // textBox3
+            // isisnamaproduk
             // 
-            textBox3.Location = new Point(100, 251);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(191, 23);
-            textBox3.TabIndex = 10;
+            this.isisnamaproduk.Location = new Point(100, 251);
+            this.isisnamaproduk.Name = "isisnamaproduk";
+            this.isisnamaproduk.Size = new Size(191, 23);
+            this.isisnamaproduk.TabIndex = 10;
             // 
-            // label3
+            // labelhargabeliproduk
             // 
-            label3.AutoSize = true;
-            label3.BackColor = SystemColors.ActiveBorder;
-            label3.BorderStyle = BorderStyle.FixedSingle;
-            label3.Font = new Font("Segoe UI", 10F);
-            label3.Location = new Point(336, 215);
-            label3.Name = "label3";
-            label3.Size = new Size(73, 21);
-            label3.TabIndex = 11;
-            label3.Text = "Harga Beli";
+            labelhargabeliproduk.AutoSize = true;
+            labelhargabeliproduk.BackColor = SystemColors.ActiveBorder;
+            labelhargabeliproduk.BorderStyle = BorderStyle.FixedSingle;
+            labelhargabeliproduk.Font = new Font("Segoe UI", 10F);
+            labelhargabeliproduk.Location = new Point(336, 215);
+            labelhargabeliproduk.Name = "labelhargabeliproduk";
+            labelhargabeliproduk.Size = new Size(73, 21);
+            labelhargabeliproduk.TabIndex = 11;
+            labelhargabeliproduk.Text = "Harga Beli";
             // 
-            // label4
+            // labelhargajualproduk
             // 
-            label4.AutoSize = true;
-            label4.BackColor = SystemColors.ActiveBorder;
-            label4.BorderStyle = BorderStyle.FixedSingle;
-            label4.Font = new Font("Segoe UI", 10F);
-            label4.Location = new Point(336, 251);
-            label4.Name = "label4";
-            label4.Size = new Size(75, 21);
-            label4.TabIndex = 12;
-            label4.Text = "Harga Jual";
+            labelhargajualproduk.AutoSize = true;
+            labelhargajualproduk.BackColor = SystemColors.ActiveBorder;
+            labelhargajualproduk.BorderStyle = BorderStyle.FixedSingle;
+            labelhargajualproduk.Font = new Font("Segoe UI", 10F);
+            labelhargajualproduk.Location = new Point(336, 251);
+            labelhargajualproduk.Name = "labelhargajualproduk";
+            labelhargajualproduk.Size = new Size(75, 21);
+            labelhargajualproduk.TabIndex = 12;
+            labelhargajualproduk.Text = "Harga Jual";
             // 
-            // textBox4
+            // isihargabeli
             // 
-            textBox4.Location = new Point(415, 213);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(191, 23);
-            textBox4.TabIndex = 13;
+            this.isihargabeli.Location = new Point(415, 213);
+            this.isihargabeli.Name = "isihargabeli";
+            this.isihargabeli.Size = new Size(191, 23);
+            this.isihargabeli.TabIndex = 13;
             // 
-            // textBox5
+            // isihargajual
             // 
-            textBox5.Location = new Point(416, 251);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(191, 23);
-            textBox5.TabIndex = 14;
+            this.isihargajual.Location = new Point(416, 251);
+            this.isihargajual.Name = "isihargajual";
+            this.isihargajual.Size = new Size(191, 23);
+            this.isihargajual.TabIndex = 14;
             // 
-            // label5
+            // labelstok
             // 
-            label5.AutoSize = true;
-            label5.BackColor = SystemColors.ActiveBorder;
-            label5.BorderStyle = BorderStyle.FixedSingle;
-            label5.Font = new Font("Segoe UI", 10F);
-            label5.Location = new Point(373, 285);
-            label5.Name = "label5";
-            label5.Size = new Size(38, 21);
-            label5.TabIndex = 15;
-            label5.Text = "Stok";
+            labelstok.AutoSize = true;
+            labelstok.BackColor = SystemColors.ActiveBorder;
+            labelstok.BorderStyle = BorderStyle.FixedSingle;
+            labelstok.Font = new Font("Segoe UI", 10F);
+            labelstok.Location = new Point(373, 285);
+            labelstok.Name = "labelstok";
+            labelstok.Size = new Size(38, 21);
+            labelstok.TabIndex = 15;
+            labelstok.Text = "Stok";
             // 
-            // textBox6
+            // isistok
             // 
-            textBox6.Location = new Point(417, 284);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(37, 23);
-            textBox6.TabIndex = 16;
+            this.isistok.Location = new Point(417, 284);
+            this.isistok.Name = "isistok";
+            this.isistok.Size = new Size(37, 23);
+            this.isistok.TabIndex = 16;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = Color.FromArgb(255, 128, 128);
-            this.pictureBox1.Location = new Point(-2, 163);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new Size(801, 216);
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.BackColor = Color.FromArgb(255, 128, 128);
+            pictureBox1.Location = new Point(-2, 163);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(801, 216);
+            pictureBox1.TabIndex = 17;
+            pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = Color.FromArgb(255, 192, 192);
-            this.pictureBox2.Location = new Point(-2, -3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new Size(801, 216);
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.BackColor = Color.FromArgb(255, 192, 192);
+            pictureBox2.Location = new Point(-2, -3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(801, 216);
+            pictureBox2.TabIndex = 18;
+            pictureBox2.TabStop = false;
             // 
             // stok
             // 
             ClientSize = new Size(800, 381);
-            Controls.Add(textBox6);
-            Controls.Add(label5);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(textBox3);
-            Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(label1);
-            Controls.Add(textBox1);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(dataGridView1);
-            Controls.Add(button1);
-            Controls.Add(this.pictureBox2);
-            Controls.Add(this.pictureBox1);
+            Controls.Add(this.isistok);
+            Controls.Add(labelstok);
+            Controls.Add(this.isihargajual);
+            Controls.Add(this.isihargabeli);
+            Controls.Add(labelhargajualproduk);
+            Controls.Add(labelhargabeliproduk);
+            Controls.Add(this.isisnamaproduk);
+            Controls.Add(labelnamaproduk);
+            Controls.Add(this.isikodeproduk);
+            Controls.Add(labelkodeproduk);
+            Controls.Add(isicari);
+            Controls.Add(this.buttoncari);
+            Controls.Add(buttonhapus);
+            Controls.Add(buttonedit);
+            Controls.Add(buttontambah);
+            Controls.Add(tampildata);
+            Controls.Add(this.buttonkembali);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Name = "stok";
-            ((ISupportInitialize)dataGridView1).EndInit();
-            ((ISupportInitialize)this.pictureBox1).EndInit();
-            ((ISupportInitialize)this.pictureBox2).EndInit();
+            ((ISupportInitialize)tampildata).EndInit();
+            ((ISupportInitialize)pictureBox1).EndInit();
+            ((ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -271,7 +272,7 @@ namespace kasirKU
 
         private void button2_Click(object sender, EventArgs e)
         {
-            bool success = crud.tambahProduk(textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text);
+            bool success = crud.tambahProduk(isikodeproduk.Text, isisnamaproduk.Text, isihargabeli.Text, isihargajual.Text, isistok.Text);
             if (success)
             {
                 MessageBox.Show("Data berhasil ditambahkan!");
@@ -286,20 +287,31 @@ namespace kasirKU
 
 
 
+        
+
         private void LoadData()
         {
-            dataGridView1.DataSource = crud.lihatProduk();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tampildata.DataSource = crud.lihatProduk();
+            tampildata.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+
+            foreach (DataGridViewColumn col in tampildata.Columns)
+            {
+                string header = col.HeaderText.Replace("_", " ");
+                col.HeaderText = textInfo.ToTitleCase(header); // Misalnya "nama_produk" → "Nama Produk"
+            }
         }
+
 
 
         private void ClearFields()
         {
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-            textBox6.Text = "";
+            isikodeproduk.Text = "";
+            isisnamaproduk.Text = "";
+            isihargabeli.Text = "";
+            isihargajual.Text = "";
+            isistok.Text = "";
         }
 
         string oldKode = ""; // Tambahkan di class-level (di luar method) agar bisa diakses di seluruh form
@@ -308,14 +320,14 @@ namespace kasirKU
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                DataGridViewRow row = tampildata.Rows[e.RowIndex];
                 oldKode = row.Cells["kode_produk"].Value.ToString();
 
-                textBox2.Text = row.Cells["kode_produk"].Value.ToString();
-                textBox3.Text = row.Cells["nama_produk"].Value.ToString();
-                textBox4.Text = row.Cells["harga_beli"].Value.ToString();
-                textBox5.Text = row.Cells["harga_jual"].Value.ToString();
-                textBox6.Text = row.Cells["stok"].Value.ToString();
+                isikodeproduk.Text = row.Cells["kode_produk"].Value.ToString();
+                isisnamaproduk.Text = row.Cells["nama_produk"].Value.ToString();
+                isihargabeli.Text = row.Cells["harga_beli"].Value.ToString();
+                isihargajual.Text = row.Cells["harga_jual"].Value.ToString();
+                isistok.Text = row.Cells["stok"].Value.ToString();
             }
         }
 
@@ -324,7 +336,7 @@ namespace kasirKU
         {
             if (MessageBox.Show("Yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                bool success = crud.hapusProduk(textBox2.Text);
+                bool success = crud.hapusProduk(isikodeproduk.Text);
                 if (success)
                 {
                     MessageBox.Show("Data berhasil dihapus.");
@@ -340,7 +352,7 @@ namespace kasirKU
 
         private void button5_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = crud.cariProduk(textBox1.Text);
+            tampildata.DataSource = crud.cariProduk(isicari.Text);
         }
 
 
@@ -348,9 +360,9 @@ namespace kasirKU
         {
             bool success = crud.UpdateProduk(
                 oldKode,
-                textBox2.Text, textBox3.Text,
-                textBox4.Text, textBox5.Text,
-                textBox6.Text
+                isikodeproduk.Text, isisnamaproduk.Text,
+                isihargabeli.Text, isihargajual.Text,
+                isistok.Text
             );
 
             if (success)
